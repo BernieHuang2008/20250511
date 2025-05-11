@@ -1,0 +1,86 @@
+<body>
+    <div id="imgshow">
+        <img src="https://cdn.photographylife.com/wp-content/uploads/2014/09/Nikon-D750-Image-Samples-2.jpg" alt="Image" />
+    </div>
+    <div id="bar">
+        <div id="blue" onclick="addblue()">Blue: 0</div>
+        <div id="red" onclick="addred()">Red: 0</div>
+        <div id="next" onclick="next()">[Next]</div>
+    </div>
+</body>
+
+<style>
+    #imgshow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #imgshow img {
+        max-width: 90%;
+        max-height: 90%;
+        color: red;
+    }
+
+    #bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #bar>div {
+        width: max-content;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    #blue {
+        background-color: blue;
+        color: white;
+    }
+    #red {
+        background-color: red;
+        color: white;
+    }
+
+    #next {
+        background-color: white;
+        color: black;
+    }
+</style>
+<script>
+var bluescore = 0;
+var redscore = 0;
+
+function addblue() {
+    bluescore++;
+    document.getElementById("blue").innerHTML = "Blue: " + bluescore;
+}
+
+function addred() {
+    redscore++;
+    document.getElementById("red").innerHTML = "Red: " + redscore;
+}
+
+var currimgidx = 0;
+function next() {
+    currimgidx++;
+    document.getElementById("imgshow").innerHTML = `<img src="imgs/${currimgidx}.jpg" alt="Competition Completed" />`;
+}
+
+</script>
