@@ -1,4 +1,5 @@
 <body>
+    <div id="pl"></div>
     <div id="imgshow">
         <img src="https://cdn.photographylife.com/wp-content/uploads/2014/09/Nikon-D750-Image-Samples-2.jpg" alt="Image" />
     </div>
@@ -82,5 +83,12 @@ function next() {
     currimgidx++;
     document.getElementById("imgshow").innerHTML = `<img src="imgs/${currimgidx}.jpg" alt="Competition Completed" />`;
 }
+
+function p(){
+    var d=document.getElementById("pl");
+    for (var i=1;i<40;i++)
+        d.innerHTML+=`<img src="imgs/${i}.jpg" alt="Competition Completed" />`;
+}
+p()
 
 </script>
